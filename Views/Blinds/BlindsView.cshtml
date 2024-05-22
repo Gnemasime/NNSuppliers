@@ -1,0 +1,28 @@
+﻿@model NNSuppliers.Models.BlindsClass
+@{
+    ViewBag.Title = "BlindsView";
+}
+
+<h2>BlindsView</h2>
+
+@using (Html.BeginForm("BlindsView", "Blinds", FormMethod.Post))
+{
+    <h2>Final Due</h2>
+    <hr />
+    <div> mountType <br />@Html.EnumDropDownListFor(n => n.mountType)</div>
+
+    <div>
+        blindType <br /> Venetian @Html.RadioButtonFor(i => i.blindType, "Venetian")
+                         Plaswood @Html.RadioButtonFor(i => i.blindType, "Plaswood")
+                         Vertical @Html.RadioButtonFor(i => i.blindType, "Vertical")
+                         Outdoor @Html.RadioButtonFor(i => i.blindType, "Outdoor")
+    </div>
+
+    <div>delivery<br /> @Html.CheckBoxFor(b => b.delivery, false)</div>
+
+    <div>Fitment <br /> @Html.CheckBoxFor(b => b.fitment, false)</div>
+
+
+    
+}
+
